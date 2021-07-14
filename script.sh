@@ -1,10 +1,10 @@
 #!/bin/bash
 
-RED="\e[31m"
-ENDCOLOR="\e[0m"
+GREEN="32"
+BOLDGREEN="\e[1;${GREEN}m""
 
 
-echo -e "${RED}[+] Installing the needed packages.${ENDCOLOR}"
+echo -e "${BOLDGREEN}Installing the needed packages.${ENDCOLOR}"
 
 
 sudo apt-get -y update
@@ -26,19 +26,21 @@ sudo apt-get install -y xargs
 
 #Creating a Directory for the tools we need
 mkdir /opt/tools 
-echo "Directory created"
+echo -e "${BOLDGREEN}Directory created.${ENDCOLOR}"
 
-echo "[+]Installing Go"
+
+echo -e "${BOLDGREEN}[+] Installing Go.${ENDCOLOR}"
+
 wget https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz
-					sudo tar -xvf go1.14.2.linux-amd64.tar.gz
-					sudo mv go /usr/local
-					export GOROOT=/usr/local/go
-					export GOPATH=$HOME/go
-					export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-					echo 'export GOROOT=/usr/local/go' >> ~/.bash_profile
-					echo 'export GOPATH=$HOME/go'	>> ~/.bash_profile			
-					echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> ~/.bash_profile	
-					source ~/.bash_profile
+sudo tar -xvf go1.14.2.linux-amd64.tar.gz
+sudo mv go /usr/local
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+echo 'export GOROOT=/usr/local/go' >> ~/.bash_profile
+echo 'export GOPATH=$HOME/go'	>> ~/.bash_profile			
+echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> ~/.bash_profile	
+source ~/.bash_profile
 cd /opt/tools
 echo -e "${RED}[+] Installing Fuff${ENDCOLOR}"
 
