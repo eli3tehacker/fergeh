@@ -32,15 +32,15 @@ echo -e "${BOLDGREEN}Directory created.${ENDCOLOR}"
 echo -e "${BOLDGREEN}[+] Installing Go.${ENDCOLOR}"
 
 wget https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz
-sudo tar -xvf go1.14.2.linux-amd64.tar.gz
-sudo mv go /usr/local
-export GOROOT=/usr/local/go
-export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-echo 'export GOROOT=/usr/local/go' >> ~/.bash_profile
-echo 'export GOPATH=$HOME/go'	>> ~/.bash_profile			
-echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> ~/.bash_profile	
-source ~/.bash_profile
+					sudo tar -xvf go1.14.2.linux-amd64.tar.gz
+					sudo mv go /usr/local
+					export GOROOT=/usr/local/go
+					export GOPATH=$HOME/go
+					export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+					echo 'export GOROOT=/usr/local/go' >> ~/.bash_profile
+					echo 'export GOPATH=$HOME/go'	>> ~/.bash_profile			
+					echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> ~/.bash_profile	
+					source ~/.bash_profile
 cd /opt/tools
 echo -e "${RED}[+] Installing Fuff${ENDCOLOR}"
 
@@ -65,4 +65,3 @@ echo "[+] Installing httprobe"
 go get -u github.com/tomnomnom/httprobe
 
 echo "[+] The tools successfully got installed"
-
